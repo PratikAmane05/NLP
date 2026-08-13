@@ -1,0 +1,10 @@
+import nltk
+from collections import Counter
+nltk.download('punkt')
+nltk.download('punkt_tab')
+text =  "Pratik is learning natural language processing and natural language processing is interesting."
+tokens = nltk.word_tokenize(text.lower())
+wordfreq=Counter(tokens)
+
+print("\nword frequency:")
+print(wordfreq)
