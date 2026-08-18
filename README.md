@@ -9,7 +9,7 @@ This repository contains practical experiments and implementations for **Natural
 | Experiment | Title | Description | Code File |
 | :--- | :--- | :--- | :--- |
 | **01** | Tokenization & Word Frequency | Splits text into tokens and calculates word frequencies using NLTK and Counter | [`NLP_1`](./NLP_1) |
-| **02** | Synonyms & Antonyms using WordNet | Extracts semantic relationships (synonyms and antonyms) for a given word using WordNet | [`NLP_2`](./NLP_2) / [`NLP_2.ipynb`](./NLP_2.ipynb) |
+| **02** | Synonyms & Antonyms using WordNet | Extracts semantic relationships (synonyms and antonyms) for a given word using WordNet | [`NLP_2.ipynb`](./NLP_2.ipynb) |
 
 ---
 
