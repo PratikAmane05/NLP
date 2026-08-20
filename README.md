@@ -10,6 +10,7 @@ This repository contains practical experiments and implementations for **Natural
 | :--- | :--- | :--- | :--- |
 | **01** | Tokenization & Word Frequency | Splits text into tokens and calculates word frequencies using NLTK and Counter | [`NLP_1`](./NLP_1) |
 | **02** | Synonyms & Antonyms using WordNet | Extracts semantic relationships (synonyms and antonyms) for a given word using WordNet | [`NLP_2.ipynb`](./NLP_2.ipynb) |
+| **03** | N-gram Generation (Bigrams & Trigrams) | Extracts contiguous sequences of words (bigrams and trigrams) using NLTK | [`NLP_3.ipynb`](./NLP_3.ipynb) |
 
 ---
 
@@ -85,6 +86,58 @@ Antonyms: {'unhappy'}
 
 ### ✅ Conclusion
 By utilizing WordNet synsets and lemmas, we can enrich text data with semantic knowledge, enabling deeper contextual and linguistic understanding.
+
+---
+
+## 🧪 Experiment 3: N-gram Generation (Bigrams & Trigrams)
+
+### 📌 Problem Statement
+Generate tokens, bigrams (2-grams), and trigrams (3-grams) from a given input text using NLTK's `bigrams` and `trigrams` utility functions.
+
+### 📖 Theory
+- **N-grams:** A contiguous sequence of *n* items (words) from a given sample of text. N-grams help capture word order and local contextual structure.
+- **Bigrams (2-gram):** Consecutive pairs of adjacent words (e.g., `("natural", "language")`).
+- **Trigrams (3-gram):** Consecutive triplets of adjacent words (e.g., `("natural", "language", "processing")`).
+- **Applications:** Language modeling, autocomplete / word prediction, speech recognition, and contextual text analysis.
+
+### 💻 Code
+```python
+import nltk
+from nltk.util import bigrams, trigrams
+
+nltk.download('punkt')
+nltk.download('punkt_tab')
+
+text = "Natural Language Processing enables machines to understand human language."
+tokens = nltk.word_tokenize(text.lower())
+
+bigram_list = list(bigrams(tokens))
+trigram_list = list(trigrams(tokens))
+
+print("Tokens:")
+print(tokens)
+
+print("\nBigrams:")
+print(bigram_list)
+
+print("\nTrigrams:")
+print(trigram_list)
+```
+
+### 📤 Expected Output
+```text
+Tokens:
+['natural', 'language', 'processing', 'enables', 'machines', 'to', 'understand', 'human', 'language', '.']
+
+Bigrams:
+[('natural', 'language'), ('language', 'processing'), ('processing', 'enables'), ('enables', 'machines'), ('machines', 'to'), ('to', 'understand'), ('understand', 'human'), ('human', 'language'), ('language', '.')]
+
+Trigrams:
+[('natural', 'language', 'processing'), ('language', 'processing', 'enables'), ('processing', 'enables', 'machines'), ('enables', 'machines', 'to'), ('machines', 'to', 'understand'), ('to', 'understand', 'human'), ('understand', 'human', 'language'), ('language', '.')]
+```
+
+### ✅ Conclusion
+By extracting bigrams and trigrams, we capture phrase-level structures and word order dependencies, providing richer contextual information for downstream Natural Language Processing tasks.
 
 ---
 
